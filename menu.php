@@ -20,10 +20,7 @@
                         <a href="#portfolio">Portfolio</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Abouts</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
+                        <a href="about.php">About</a>
                     </li>
                 </ul>
             </div>
