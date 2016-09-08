@@ -79,7 +79,7 @@ include 'head.php';
     <!-- Footer -->
    <?php include'footer.php'; ?>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <?php include'scripts.php' ?>
+    <?php require'scripts.php' ?>
 
 </body>
 

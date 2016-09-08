@@ -119,9 +119,9 @@ header .intro-text .skills {
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
-.navbar-custom .navbar-brand.active {
+/*.navbar-custom .navbar-brand.active {
   color: white;
-}
+}*/
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
@@ -133,13 +133,13 @@ header .intro-text .skills {
   outline: none;
 }
 .navbar-custom .navbar-nav li a:focus,
-.navbar-custom .navbar-nav li a:active {
+/*.navbar-custom .navbar-nav li a:active {
   color: white;
-}
-.navbar-custom .navbar-nav li.active a {
+}*/
+/*.navbar-custom .navbar-nav li.active a {
   color: white;
   background: #18BC9C;
-}
+}*/
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
@@ -506,4 +506,8 @@ fieldset[disabled] .btn-success.active {
 
 #about{
   margin-top: 100px;
+}
+.active{
+  color:  #18BC9C !important;
+  outline:  none !important;
 }
