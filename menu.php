@@ -17,7 +17,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="index.php">Portfolio</a>
                     </li>
                     <li class="page-scroll">
                         <a href="about.php">About</a>
