@@ -4,7 +4,12 @@
 <?php 
 include 'head.php';
 ?> 
+<?php 
 
+$input = array("cabin.png", "cake.png", "circus.png", "game.png", "safe.png", "submarine.png");
+shuffle($input);
+
+?>
 <body id="page-top" class="index">
 
     <!-- Navigation -->
@@ -27,7 +32,6 @@ include 'head.php';
             </div>
         </div>
     </header>
-
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
@@ -40,33 +44,33 @@ include 'head.php';
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                        <?php echo '<img src="img/portfolio/' . $input[0] . '"';?> class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                       <?php echo '<img src="img/portfolio/' . $input[1] . '"'; ?> class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <?php echo '<img src="img/portfolio/' . $input[2] . '"'; ?> class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
 
-                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                        <?php echo '<img src="img/portfolio/' . $input[3] . '"'; ?> class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                        <?php echo '<img src="img/portfolio/' . $input[4] . '"'; ?> class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                        <?php echo '<img src="img/portfolio/' . $input[5] . '"'; ?> class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
