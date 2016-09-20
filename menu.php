@@ -27,6 +27,11 @@
                         } ?> id="">
                         <a href="about.php">About</a>
                     </li>
+                    <li>
+                        <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                              <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
