@@ -1,5 +1,9 @@
- <?php include 'head.php'; ?>
- <?php include 'menu.php'; ?>
+ <?php 
+  include 'head.php'; 
+  include 'menu.php';
+  include 'modal.php'; 
+  ?>
+
  <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
