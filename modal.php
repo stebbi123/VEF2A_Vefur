@@ -8,7 +8,7 @@
               </div>
               <div class="modal-body">
                 
-                <form class="form-horizontal">  
+                <form method="post" action="" class="form-horizontal">  
                         <div class="form-group">   
                                 <label for="inputEmail3" class="col-sm-2 control-label">Email </label>
                                 <div class="col-sm-10">   
