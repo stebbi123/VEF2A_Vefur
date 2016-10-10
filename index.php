@@ -15,6 +15,7 @@ shuffle($input);
    <?php
    include 'modal.php';
    include 'menu.php';
+   include 'check.php'
     ?>
 
     <!-- Header -->
@@ -34,6 +35,7 @@ shuffle($input);
     </header>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

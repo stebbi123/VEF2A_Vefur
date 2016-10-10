@@ -1,3 +1,15 @@
+<?php 
+$errors = [];
+$missing = [];
+if (isset($_POST['send'])) {
+  
+
+    $expected = ['name', 'password'];
+    $required = ['password', 'name'];
+    require 'check.php';
+}
+?>
+
 <body id="page-top" class="index">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -10,17 +22,26 @@
                 
                 <form method="post" action="" class="form-horizontal">  
                         <div class="form-group">   
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email </label>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Email 
+                                <?php if ($missing && in_array('email', $missing)) { ?>
+                                <span class="warning">Please enter your email</span>
+                                <?php } ?>
+                                </label>
                                 <div class="col-sm-10">   
                                         <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
                                 </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password
+                            <?php if ($missing && in_array('password', $missing)) { ?>
+                            <span class="warning">Please enter your password</span>
+                            <?php } ?>
+                            </label>
                             <div class="col-sm-10">
                                 <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
                 </form>
                     <p>New user?</p>
                     <a href="">Sign up now!</a>
@@ -28,7 +49,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Login</button>
+                
               </div>
             </div>
           </div>
