@@ -1,3 +1,18 @@
+
+<?php 
+$errors = [];
+$missing = [];
+if (isset($_POST['send'])) {
+  
+
+    $expected = ['name', 'password'];
+    $required = ['name', 'password'];
+    require 'check.php';
+    
+}
+error_reporting(E_ERROR | E_PARSE)
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +30,7 @@ shuffle($input);
    <?php
    include 'modal.php';
    include 'menu.php';
-   include 'check.php'
+   include 'check.php';
     ?>
 
     <!-- Header -->
@@ -35,7 +50,9 @@ shuffle($input);
     </header>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
+    <?php 
 
+    ?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

@@ -7,7 +7,7 @@ foreach ($_POST as $key => $value) {
 		$missing[] = $key;
 		${$key} = '';
 	}
-
+	
 	elseif (in_array($key, $expected)) {
 		${$key} = $temp;
 	}

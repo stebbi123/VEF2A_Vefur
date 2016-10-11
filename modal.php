@@ -1,14 +1,4 @@
-<?php 
-$errors = [];
-$missing = [];
-if (isset($_POST['send'])) {
-  
 
-    $expected = ['name', 'password'];
-    $required = ['password', 'name'];
-    require 'check.php';
-}
-?>
 
 <body id="page-top" class="index">
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -28,7 +18,9 @@ if (isset($_POST['send'])) {
                                 <?php } ?>
                                 </label>
                                 <div class="col-sm-10">   
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email"<?php if ($missing || $errors) {
+                                          echo 'value="' . htmlentities($email) . '"';
+                                        } ?>>
                                 </div>
                         </div>
                         <div class="form-group">
@@ -38,7 +30,9 @@ if (isset($_POST['send'])) {
                             <?php } ?>
                             </label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password"<?php if ($missing || $errors) {
+                                          echo 'value="' . htmlentities($password) . '"';
+                                        } ?>>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
