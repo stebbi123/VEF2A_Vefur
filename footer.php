@@ -1,4 +1,4 @@
- <footer class="text-center">
+ <footer class="text-center affix-bottom">
         <!--<div class="footer-above">
             <div class="container">
                 <div class="row">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>-->
-        <div class="footer-below">
+        <div class="footer-below affix-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
