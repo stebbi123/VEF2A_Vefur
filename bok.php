@@ -33,14 +33,34 @@ class Bok
 
 }
 
-$bok1 = new Bok('Kisur', '5000');
+class Publisher extends Bok{
+	public $publisher;
+
+	public function setPublisher($publisher)
+	{
+	$this->publisher = $publisher;
+	}
+	public function getPublisher()
+	{
+		return $this->publisher;
+	}
+}
+
+$efnafraedi = new Bok('Kisur', '5000');
+$staerdfraedi = new Bok('Margar Kisur', '10000');
+$islenska = new Bok('Ennþá fleiri kisur', '15000');
+
+$test = new Publisher('asd', '1');
+$test->setPublisher('asdd');
 
 
-$bok2 = new Bok('Margar Kisur', '10000');
 
 
-var_dump($bok1);
-var_dump($bok2);
+var_dump($test);
+//var_dump($efnafraedi);
+//var_dump($staerdfraedi);
+//var_dump($islenska);
+//var_dump($test)
 ?>
 
 </html>
