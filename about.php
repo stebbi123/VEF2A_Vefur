@@ -1,3 +1,17 @@
+ 
+<?php 
+$errors = [];
+$missing = [];
+if (isset($_POST['send'])) {
+  
+
+    $expected = ['name', 'password'];
+    $required = ['name', 'password'];
+    require 'check.php';
+    
+}
+error_reporting(E_ERROR | E_PARSE)
+?>
  <?php 
   include 'head.php'; 
   include 'menu.php';

@@ -21,7 +21,10 @@ include 'check.php';
 require 'menu.php';
 ?>
 <body>
-<form method="post" action="" class="form-vertical">  
+<section>
+<br>
+<br>
+<form method="post" action="about.php" class="form-vertical">  
             <div class="form-group">   
                     <label for="inputEmail3" class=" control-label">Email 
                     <?php if ($missing && in_array('email', $missing)) { ?>
@@ -48,7 +51,7 @@ require 'menu.php';
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
     </form>
-
+</section>
 
 </body>
 
