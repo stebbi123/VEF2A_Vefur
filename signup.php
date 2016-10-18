@@ -4,12 +4,16 @@ $missing = [];
 if (isset($_POST['send'])) {
   
 
-    $expected = ['name', 'password'];
-    $required = ['name', 'password'];
+    $expected = ['name', 'email', 'password'];
+    $required = ['email', 'password', 'name'];
     require 'check.php';
+
+    if ($required && !$errors && !$missing) {
+    	header('Location: index.php');
+    }
     
 }
-error_reporting(E_ERROR | E_PARSE)
+//error_reporting(E_ERROR | E_PARSE)
 ?>
 
 <!DOCTYPE html>
@@ -17,14 +21,28 @@ error_reporting(E_ERROR | E_PARSE)
 <?php 
 include 'head.php';
 
-include 'check.php';
+
 require 'menu.php';
 ?>
 <body>
 <section>
 <br>
 <br>
-<form method="post" action="about.php" class="form-vertical">  
+<form method="post" action="" class="form-vertical">  
+			
+			
+			<div class="form-group">   
+                    <label for="name" class=" control-label">Name
+                    <?php if ($missing && in_array('name', $missing)) { ?>
+                    <span class="warning">Please enter your email</span>
+                    <?php } ?>
+                    </label>
+                    <div class="col-sm-10">   
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Name"<?php if ($missing || $errors) {
+                              echo 'value="' . htmlentities($name) . '"';
+                            } ?>>
+                    </div>
+            </div>
             <div class="form-group">   
                     <label for="inputEmail3" class=" control-label">Email 
                     <?php if ($missing && in_array('email', $missing)) { ?>
@@ -32,7 +50,7 @@ require 'menu.php';
                     <?php } ?>
                     </label>
                     <div class="col-sm-10">   
-                            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email"<?php if ($missing || $errors) {
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"<?php if ($missing || $errors) {
                               echo 'value="' . htmlentities($email) . '"';
                             } ?>>
                     </div>
@@ -44,7 +62,7 @@ require 'menu.php';
                 <?php } ?>
                 </label>
                 <div class="col-sm-10">
-                    <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password"<?php if ($missing || $errors) {
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password"<?php if ($missing || $errors) {
                               echo 'value="' . htmlentities($password) . '"';
                             } ?>>
                 </div>

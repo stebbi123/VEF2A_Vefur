@@ -38,7 +38,7 @@
                         <button type="submit" class="btn btn-primary">Login</button>
                 </form>
                     <p>New user?</p>
-                    <a href="">Sign up now!</a>
+                    <a href="signup.php">Sign up now!</a>
 
               </div>
               <div class="modal-footer">
