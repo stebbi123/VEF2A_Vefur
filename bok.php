@@ -6,10 +6,11 @@ class Bok
 	public $titill;
 	public $verð;
 
-	public function __construct($titill)
+	public function __construct($titill, $verð)
 	{
 
 		$this->titill = $titill;
+		$this->verð = $verð;
 	}
 
 	public function setPrice($verð)
@@ -32,11 +33,11 @@ class Bok
 
 }
 
-$bok1 = new Bok('Kisur');
-$bok1->setPrice('5000');
+$bok1 = new Bok('Kisur', '5000');
 
-$bok2 = new Bok('Margar Kisur');
-$bok2->setPrice('10000');
+
+$bok2 = new Bok('Margar Kisur', '10000');
+
 
 var_dump($bok1);
 var_dump($bok2);
