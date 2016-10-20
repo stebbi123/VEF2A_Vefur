@@ -32,6 +32,9 @@
                               <i class="fa fa-sign-in" aria-hidden="true"></i>
                         </a>
                     </li>
+                    <li>
+                        <a href="upload.php">Upload</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
