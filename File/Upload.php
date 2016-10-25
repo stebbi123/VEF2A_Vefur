@@ -4,7 +4,7 @@ namespace File;
 class Upload {
     protected $uploaded = [];
     protected $destination;
-    protected $max = 51200;
+    //protected $max = 51200;
     protected $messages = [];
     protected $permitted = [
         'image/gif',

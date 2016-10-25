@@ -54,12 +54,20 @@ $test = new Publisher('asd', '1');
 $test->setPublisher('asdd');
 
 
+echo $test->getPublisher();
+echo "<br>";
+echo $test->getTitill();
+echo "<br>";
+echo $test->getPrice();
 
 
-var_dump($test);
-//var_dump($efnafraedi);
-//var_dump($staerdfraedi);
-//var_dump($islenska);
+echo "<br>";
+var_dump($efnafraedi);
+echo "<br>";
+var_dump($staerdfraedi);
+echo "<br>";
+var_dump($islenska);
+
 //var_dump($test)
 ?>
 
