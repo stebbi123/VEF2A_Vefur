@@ -10,6 +10,7 @@ if (isset($_POST['send'])) {
 
     if ($required && !$errors && !$missing) {
     	header('Location: index.php');
+        exit();
     }
     
 }
