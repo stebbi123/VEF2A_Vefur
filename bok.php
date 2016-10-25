@@ -67,8 +67,8 @@ echo "<br>";
 var_dump($staerdfraedi);
 echo "<br>";
 var_dump($islenska);
-
-//var_dump($test)
+echo "<br>";
+var_dump($test)
 ?>
 
 </html>
