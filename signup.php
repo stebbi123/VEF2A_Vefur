@@ -7,6 +7,7 @@ if (isset($_POST['send'])) {
     $expected = ['name', 'email', 'password'];
     $required = ['email', 'password', 'name'];
     require 'check.php';
+    require 'connection.php';
 
     if ($required && !$errors && !$missing) {
     	header('Location: index.php');
