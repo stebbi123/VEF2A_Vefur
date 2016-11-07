@@ -1,23 +1,21 @@
 <?php 
-
-
+$errors = [];
+include 'Users.php';
 $email = trim($_POST['email']);
 $username = trim($_POST['name']);
 $password = trim($_POST['password']);
 
 
-foreach ($_POST as $key => $value) {
-	
-	$temp = is_array($value) ? $value : trim($value);
+	$dbUsers = new Users($conn);
 
-	if (empty($temp) && in_array($key, $required)) {
-		$missing[] = $key;
-		${$key} = '';
+	$status = $dbUsers->newUser($username, $email, $password);
+
+	if ($status) {
+		$success = "$username has been registered.";
+	}else{
+		$errors[] = "$username is already in use.";
 	}
-	
-	elseif (in_array($key, $expected)) {
-		${$key} = $temp;
-	}
-}
+
+
 
 ?>

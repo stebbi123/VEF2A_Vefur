@@ -1,13 +1,14 @@
 <?php 
 $errors = [];
 $missing = [];
-if (isset($_POST['send'])) {
+if (isset($_POST['register'])) {
   
 
     $expected = ['name', 'email', 'password'];
     $required = ['email', 'password', 'name'];
-    require 'check.php';
-    require 'connection.php';
+    require_once 'check.php';
+    require_once 'connection.php';
+    require_once 'Users.php';
 
     if ($required && !$errors && !$missing) {
     	header('Location: index.php');
@@ -16,6 +17,7 @@ if (isset($_POST['send'])) {
     
 }
 //error_reporting(E_ERROR | E_PARSE)
+require_once 'session_timeout.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +32,17 @@ require 'menu.php';
 <section>
 <br>
 <br>
+<?php
+if (isset($success)) {
+    echo "<p>$success</p>";
+} elseif (isset($errors) && !empty($errors)) {
+    echo '<ul>';
+    foreach ($errors as $error) {
+        echo "<li>$error</li>";
+    }
+    echo '</ul>';
+?>
+}
 <form method="post" action="" class="form-vertical">  
 			
 			
