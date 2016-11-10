@@ -10,7 +10,7 @@ if (isset($_POST['send'])) {
     require 'check.php';
     
 }
-error_reporting(E_ERROR | E_PARSE)
+//error_reporting(E_ERROR | E_PARSE)
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +50,7 @@ shuffle($input);
     </header>
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
-    <?php 
 
-    ?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

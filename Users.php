@@ -23,9 +23,10 @@
 		 *  @param PDO obj
 		 *
 		 */
+
 		public function __construct($connection_name)
 		{
-			
+			include'connection.php';
 			if(!empty($connection_name)){
 
 				$this->connection = $connection_name;
@@ -52,24 +53,27 @@
 		* @returns boolean
 		* @returns boolean
 		*/
-		public function newUser($first_name,$last_name,$user_email,$user_name,$user_pass)
+		public function newUser($name, $email, $password)
 		{
-			$statement = $this->connection->prepare('call NewUser(?,?,?,?,?)');
-			$statement->bindParam(1,$first_name);
-			$statement->bindParam(2,$last_name);
-			$statement->bindParam(3,$user_email);
-			$statement->bindParam(4,$user_name);
-			$statement->bindParam(5,$user_pass);
-			
-			try 
-			{
-				$statement->execute();
-				
-				return true;
-			}
-			catch(PDOException $e)
-			{
-				return false;
+			include 'connection.php';
+			if (isset($_POST['submit'])) {
+				try {
+					$stmt = $connection->prepare('INSERT INTO users ("name, email, password") VALUES (:name, :email, :password)');
+
+					$stmt->bindParam(':name', $name);
+					$stmt->bindParam(':email', $email);
+					$stmt->bindParam(':password', $password);
+
+					$name = $_POST['user'];
+					$email = $_POST['email'];
+					$password = $_POST['password'];	
+					$stmt->execute();
+
+					echo "nýr user kominn";
+					
+				} catch (Exception $e) {
+					echo $e;
+				}
 			}
 		}
 		

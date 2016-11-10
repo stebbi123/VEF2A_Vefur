@@ -1,8 +1,10 @@
 <?php 
 $errors = [];
 $missing = [];
-if (isset($_POST['register'])) {
-  
+if (isset($_POST['submit'])) {
+  	$email = trim($_POST['email']);
+	$user = trim($_POST['name']);
+	$password = trim($_POST['password']);
 
     $expected = ['name', 'email', 'password'];
     $required = ['email', 'password', 'name'];
@@ -14,10 +16,13 @@ if (isset($_POST['register'])) {
     	header('Location: index.php');
         exit();
     }
+    $dbUsers = new Users($connection);
+
+	$status = $dbUsers->newUser($user, $email, $password);
     
 }
 //error_reporting(E_ERROR | E_PARSE)
-require_once 'session_timeout.php';
+//require_once 'session_timeout.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +46,8 @@ if (isset($success)) {
         echo "<li>$error</li>";
     }
     echo '</ul>';
-?>
-}
+
+}?>
 <form method="post" action="" class="form-vertical">  
 			
 			
