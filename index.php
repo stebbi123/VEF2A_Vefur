@@ -20,7 +20,7 @@ if (isset($_POST['send'])) {
 include 'head.php';
 ?> 
 <?php 
-
+//s
 $input = array("cabin.png", "cake.png", "circus.png", "game.png", "safe.png", "submarine.png");
 shuffle($input);
 
