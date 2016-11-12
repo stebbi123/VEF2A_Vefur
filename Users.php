@@ -54,27 +54,31 @@
 		* @returns boolean
 		*/
 		public function newUser($name, $email, $password)
-		{
+		{			
 			include 'connection.php';
-			if (isset($_POST['submit'])) {
-				try {
-					$stmt = $connection->prepare('INSERT INTO users ("name, email, password") VALUES (:name, :email, :password)');
-
+			If(isset($_POST['send'])){
+				try{
+//Undirbúið sql fyrir insert skipun
+					$stmt = $connection->prepare("INSERT INTO users(name, email, password)
+						VALUES (:name, :email, :password)");
+//Placeholderar og breytur bundnar saman
 					$stmt->bindParam(':name', $name);
 					$stmt->bindParam(':email', $email);
 					$stmt->bindParam(':password', $password);
-
-					$name = $_POST['user'];
+//Postað úr forminu eftir name value'i.
+					$name = $_POST['name']; 	
 					$email = $_POST['email'];
-					$password = $_POST['password'];	
+					$password = $_POST['password'];
+
 					$stmt->execute();
 
-					echo "nýr user kominn";
-					
-				} catch (Exception $e) {
-					echo $e;
+					echo "New records created successfully. You are now safe to log in.";
 				}
-			}
+				catch(PDOException $e)
+				{
+					echo "Error: " . $e->getMessage();
+				}      
+			}   
 		}
 		
 		/**

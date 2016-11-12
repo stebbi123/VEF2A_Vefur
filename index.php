@@ -2,14 +2,14 @@
 <?php 
 $errors = [];
 $missing = [];
-if (isset($_POST['send'])) {
-  
+/*  
 
     $expected = ['name', 'password'];
     $required = ['name', 'password'];
-    require 'check.php';
+    //require 'check.php';
     
-}
+}*/
+error_reporting(E_ALL)
 //error_reporting(E_ERROR | E_PARSE)
 ?>
 
@@ -30,7 +30,7 @@ shuffle($input);
    <?php
    include 'modal.php';
    include 'menu.php';
-   include 'check.php';
+   //include 'check.php';
     ?>
 
     <!-- Header -->

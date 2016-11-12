@@ -12,25 +12,25 @@
                 
                 <form method="post" action="" class="form-horizontal">  
                         <div class="form-group">   
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email 
+                                <label for="password" class="col-sm-2 control-label">Email 
                                 <?php if ($missing && in_array('email', $missing)) { ?>
                                 <span class="warning">Please enter your email</span>
                                 <?php } ?>
                                 </label>
                                 <div class="col-sm-10">   
-                                        <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email"<?php if ($missing || $errors) {
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Email"<?php if ($missing || $errors) {
                                           echo 'value="' . htmlentities($email) . '"';
                                         } ?>>
                                 </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password
+                            <label for="password" class="col-sm-2 control-label">Password
                             <?php if ($missing && in_array('password', $missing)) { ?>
                             <span class="warning">Please enter your password</span>
                             <?php } ?>
                             </label>
                             <div class="col-sm-10">
-                                <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password"<?php if ($missing || $errors) {
+                                <input type="password" name="password" class="form-control" id="password" placeholder="Password"<?php if ($missing || $errors) {
                                           echo 'value="' . htmlentities($password) . '"';
                                         } ?>>
                             </div>

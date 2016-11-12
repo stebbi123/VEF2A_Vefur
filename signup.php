@@ -1,28 +1,36 @@
-<?php 
+<?php
+//Arryar búnir til 
 $errors = [];
 $missing = [];
-if (isset($_POST['submit'])) {
-  	$email = trim($_POST['email']);
-	$user = trim($_POST['name']);
-	$password = trim($_POST['password']);
+//Tjékkar ef formið hefur verið submittað
 
-    $expected = ['name', 'email', 'password'];
-    $required = ['email', 'password', 'name'];
-    require_once 'check.php';
-    require_once 'connection.php';
-    require_once 'Users.php';
+if (isset($_POST['send'])) {
+$name = trim($_POST['name']);
+$password = trim($_POST['password']);
+$email = trim($_POST['email']);
 
-    if ($required && !$errors && !$missing) {
-    	header('Location: index.php');
-        exit();
-    }
-    $dbUsers = new Users($connection);
+//Expected fields in form
+$expected = ['name', 'password', 'email'];
+$required = ['name', 'password', 'email'];
 
-	$status = $dbUsers->newUser($user, $email, $password);
-    
+//Keyrt skriftur
+require 'check.php';
+require "Users.php";
+include "connection.php";
+
+$dbUsers = new Users($connection);
+$status = $dbUsers->newUser($name, $email, $password);
+
+if($status) {
+  header('upload.php');
 }
-//error_reporting(E_ERROR | E_PARSE)
-//require_once 'session_timeout.php';
+
+else
+{
+  echo "This username is already in use";
+}
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +72,7 @@ if (isset($success)) {
                     </div>
             </div>
             <div class="form-group">   
-                    <label for="inputEmail3" class=" control-label">Email 
+                    <label for="email" class=" control-label">Email 
                     <?php if ($missing && in_array('email', $missing)) { ?>
                     <span class="warning">Please enter your email</span>
                     <?php } ?>
@@ -76,7 +84,7 @@ if (isset($success)) {
                     </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword3" class="control-label">Password
+                <label for="password" class="control-label">Password
                 <?php if ($missing && in_array('password', $missing)) { ?>
                 <span class="warning">Please enter your password</span>
                 <?php } ?>
@@ -87,7 +95,7 @@ if (isset($success)) {
                             } ?>>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button name="send" type="submit" class="btn btn-primary">Sign Up</button>
     </form>
 </section>
 
